@@ -1,4 +1,4 @@
-package ejercicio1;
+package tp5;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;

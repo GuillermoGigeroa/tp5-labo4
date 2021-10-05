@@ -1,4 +1,4 @@
-package ejercicio1;
+package tp5;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,15 +8,15 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 public abstract class Util {
-	
+
 	// Metodo para enviar alertas en pantalla
-	
+
 	public static void alerta(String texto) {
 		JOptionPane.showMessageDialog(null, texto);
 	}
-	
+
 	// Metodo para cargar la lista de generos
-	
+
 	public static JComboBox<Categoria> listaGeneros() {
 		JComboBox<Categoria> listaCargada = new JComboBox<Categoria>();
 		ArrayList<Categoria> listaCategorias = new ArrayList<Categoria>();
@@ -31,9 +31,9 @@ public abstract class Util {
 		}
 		return listaCargada;
 	}
-	
+
 	// Metodo para extraer un DefaultListModel<Pelicula> de un TreeSet<Pelicula>
-	
+
 	public static DefaultListModel<Pelicula> obtenerDefaultListModel(TreeSet<Pelicula> origen) {
 		DefaultListModel<Pelicula> dlmPeliculas = new DefaultListModel<Pelicula>();
 		dlmPeliculas = new DefaultListModel<Pelicula>();

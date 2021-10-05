@@ -1,4 +1,4 @@
-package ejercicio1;
+package tp5;
 
 public class Principal {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ejercicio1;
+package tp5;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -36,14 +36,14 @@ public class JPanelCargarPelicula extends JPanel {
 	public JPanelCargarPelicula(TreeSet<Pelicula> listaPeliculas) {
 		this.listaPeliculas = listaPeliculas;
 		limpiarPeliculaActual();
-		
+
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0 };
 		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 17, 0, 0, 0 };
 		gridBagLayout.columnWeights = new double[] { 1.0, 1.0, 0.0, 1.0, 1.0, Double.MIN_VALUE };
 		gridBagLayout.rowWeights = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
-		
+
 		lblID = new JLabel("ID");
 		gbc_lblID = new GridBagConstraints();
 		gbc_lblID.insets = new Insets(0, 0, 5, 5);
@@ -106,8 +106,10 @@ public class JPanelCargarPelicula extends JPanel {
 	}
 
 	private void accionBotonAceptar() {
-		/*	Primero verifica que la lista no sea ni -1 ni 0
-			porque no puede existir pelicula sin categoria.	*/
+		/*
+		 * Primero verifica que la lista no sea ni -1 ni 0 porque no puede existir
+		 * pelicula sin categoria.
+		 */
 		if (cbGenero.getSelectedIndex() < 1) {
 			Util.alerta("Por favor, seleccione un género antes de continuar.");
 			return;
@@ -122,7 +124,8 @@ public class JPanelCargarPelicula extends JPanel {
 		} else {
 			cargarPelicula(new Pelicula(nombrePelicula, categoriaActual));
 		}
-		// En caso de que se hayan cargado correctamente ambas cosas, lo carga en la lista.
+		// En caso de que se hayan cargado correctamente ambas cosas, lo carga en la
+		// lista.
 		if (verificarSiEstaCompleto()) {
 			agregarPelicula(peliculaActual);
 		}
@@ -135,12 +138,12 @@ public class JPanelCargarPelicula extends JPanel {
 		cbGenero.setSelectedIndex(0);
 		limpiarPeliculaActual();
 	}
-	
+
 	private void limpiarPeliculaActual() {
 		peliculaActual = null;
 		categoriaActual = null;
 	}
-	
+
 	private void agregarPelicula(Pelicula pelicula) {
 		// Agrega la pelicula al TreeSet y luego avisa que ya fue cargado.
 		listaPeliculas.add(pelicula);
@@ -157,7 +160,8 @@ public class JPanelCargarPelicula extends JPanel {
 	}
 
 	private boolean verificarSiEstaCompleto() {
-		// Verifica que ambos campos hayan sido cargados correctamente, sino devuelve false.
+		// Verifica que ambos campos hayan sido cargados correctamente, sino devuelve
+		// false.
 		if (peliculaActual != null && categoriaActual != null) {
 			return true;
 		}

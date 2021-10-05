@@ -1,4 +1,4 @@
-package ejercicio1;
+package tp5;
 
 public class Categoria implements Comparable<Categoria> {
 
