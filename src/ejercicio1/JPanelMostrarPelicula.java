@@ -19,7 +19,7 @@ public class JPanelMostrarPelicula extends JPanel {
 	private JList<Pelicula> lista;
 
 	public JPanelMostrarPelicula(TreeSet<Pelicula> listaPeliculas) {
-		dlmListaPeliculas = Util.obtenerDefaultListModel(listaPeliculas); 
+		dlmListaPeliculas = Util.obtenerDefaultListModel(listaPeliculas);
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0 };
 		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0 };
